@@ -1,7 +1,7 @@
 {
   "name": "@grinstead/classnames",
   "author": "Joe Grinstead <npm@mailforce.net>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "css",
     "concatenate"
   ],
-  "license": "UNLICENSED",
+  "license": "Unlicense",
   "homepage": "https://github.com/grinstead/classnames#readme",
   "repository": {
     "type": "git",
