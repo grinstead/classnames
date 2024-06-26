@@ -2,6 +2,8 @@
 
 A small, memory-efficient npm package for dynamically concatenating CSS class names. This package provides various functions taking certain numbers of arguments, though its main function is `classnames`, all filtering out falsy values to ensure clean and valid class strings.
 
+The plain `classnames` function will avoid creating arrays under the hood, and will even avoid creating new strings if only one of the classnames is truthy.
+
 ## Installation
 
 You can install this package using npm:
@@ -21,8 +23,11 @@ import { classnames } from "@grinstead/classnames";
 
 const className = classnames("class1", "class2", "class3"); // 'class1 class2 class3'
 const twoClassNames = classnames("class1", "", "class3"); // 'class1 class3'
+const nullClassName = classnames("class1", null, "class3"); // 'class1 class3'
+const falseClassName = classnames(false, "class2", "class3"); // 'class2 class3'
 const singleClassName = classnames("class1"); // 'class1'
-const emptyClassName = classnames("", "", ""); // undefined
+const emptyClassName = classnames(0, "", ""); // undefined
+const anotherEmptyClassName = classnames(undefined, undefined, undefined); // undefined
 ```
 
 ### classnames1
@@ -34,6 +39,8 @@ import { classnames1 } from "@grinstead/classnames";
 
 const className = classnames1("class1"); // 'class1'
 const emptyClassName = classnames1(""); // undefined
+const nullClassName = classnames1(null); // undefined
+const falseClassName = classnames1(false); // undefined
 ```
 
 ### classnames2
@@ -45,7 +52,9 @@ import { classnames2 } from "@grinstead/classnames";
 
 const className = classnames2("class1", "class2"); // 'class1 class2'
 const singleClassName = classnames2("class1", ""); // 'class1'
-const emptyClassName = classnames2("", ""); // undefined
+const nullClassName = classnames2(null, "class2"); // 'class2'
+const falseClassName = classnames2("class1", false); // 'class1'
+const undefinedClassName = classnames2("", undefined); // undefined
 ```
 
 ### classnames3
