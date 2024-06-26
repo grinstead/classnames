@@ -1,9 +1,33 @@
 {
   "name": "@grinstead/classnames",
-  "module": "index.ts",
+  "author": "Joe Grinstead <npm@mailforce.net>",
+  "version": "1.0.1",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "A simple, performance-oriented utility for optionally joining css classnames",
+  "scripts": {
+    "build": "bun run build.ts",
+    "prepublishOnly": "bun run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "classnames",
+    "css",
+    "concatenate"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/grinstead/classnames#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grinstead/classnames.git"
+  },
+  "bugs": "https://github.com/grinstead/classnames/issues",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.2.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
