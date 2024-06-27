@@ -49,7 +49,9 @@ export function classnames4(
         ? d
           ? `${a} ${b} ${c} ${d}`
           : `${a} ${b} ${c}`
-        : classnames(a, b, d)
+        : d
+        ? `${a} ${b} ${d}`
+        : `${a} ${b}`
       : classnames(a, c, d)
     : classnames(b, c, d);
 }
