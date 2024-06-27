@@ -23,8 +23,8 @@ for (let length = 0; length <= 4; length++) {
       classes.push(i === 0 ? `class0 sneakyclass` : `class${i}`);
     }
 
+    // iterate over every possible combination of string and falsy
     for (let bitfield = (1 << length) - 1; bitfield >= 0; bitfield--) {
-      // iterate over every possible combination of string and falsy
       const args: Array<string | ReturnType<typeof getFalsy>> = classes.map(
         (classname, i) => (bitfield & (1 << i) ? classname : getFalsy())
       );
