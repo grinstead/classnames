@@ -43,7 +43,15 @@ export function classnames4(
   c: string | Falsy,
   d: string | Falsy
 ): string | undefined {
-  return classnames2(classnames2(a, b), classnames2(c, d));
+  return a
+    ? b
+      ? c
+        ? d
+          ? `${a} ${b} ${c} ${d}`
+          : `${a} ${b} ${c}`
+        : classnames(a, b, d)
+      : classnames(a, c, d)
+    : classnames(b, c, d);
 }
 
 export function classnamesMany(
